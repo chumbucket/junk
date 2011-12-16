@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>	
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Mouse</title>
+	<style type="text/css" media="screen">
+		#mydiv
+		{
+			background-color: green;
+		}
+	</style>	
+	<script type="text/javascript" charset="utf-8">
+		window.onload = function(){
+		function updatemouse(e){
+			var element = e.target;
+			var elementX = e.clientX - 10 ;
+			var elementY = e.clientY - 10;
+			//console.log(elementX,elementY);
+			ctx.fillRect(elementX,elementY,5,5);
+		}
+		var mydiv = document.getElementById('mydiv');
+		var ctx = mydiv.getContext('2d');
+		document.addEventListener('mouseup',stopdraw,false);
+		mydiv.addEventListener('mousedown',draw,false);
+		mydiv.addEventListener('mouseup',stopdraw,false);
+		function draw(){
+		mydiv.addEventListener('mousemove',updatemouse,false);
+		}
+		function stopdraw(){
+			mydiv.removeEventListener('mousemove',updatemouse,false);
+		}
+		}
+	</script>	
+</head>
+<body >
+	<canvas id="mydiv">
+		
+	</canvas>
+	
+</body>
+</html>
