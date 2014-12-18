@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>	
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Mario</title>
+	<script type="text/javascript" charset="utf-8">
+		setTimeout(function(){
+			var ctx = document.getElementById('Mario').getContext('2d');
+			var pWidth = 10;
+			var pHeight = 10;
+			var red = "255,0,0";
+			var brown = "150,100,0";
+			var tan = "255,160,0";
+			function draw(xStart,xEnd,y,color){
+				for (i=xStart;i<xEnd;i+=pWidth){
+					ctx.fillStyle = "rgb("+color+")";
+					ctx.fillRect(i,y,pWidth,pHeight);
+				}
+			}
+			//row 1
+			draw(40,90,0,red);
+			//
+			// row 2
+			draw(30,120,10,red);
+			//
+			// row 3
+			draw(30,60,20,brown);
+			draw(60,80,20,tan);
+			draw(80,90,20,brown);
+			draw(90,100,20,tan);
+			//
+			//row 4
+			draw(20,30,30,brown);
+			draw(30,40,30,tan);
+			draw(40,50,30,brown);
+			draw(50,80,30,tan);	
+			draw(80,90,30,brown);
+			draw(90,120,30,tan);
+			//
+			//row 5
+			draw(20,30,40,brown);
+			draw(30,40,40,tan);
+			draw(40,60,40,brown);
+			draw(60,90,40,tan);
+			draw(90,100,40,brown);
+			draw(100,130,40,tan);
+			//
+			//row 6
+			draw(20,40,50,brown);
+			draw(40,80,50,tan);
+			draw(80,120,50,brown);
+			//
+			//row 7
+			draw(40,110,60,tan);
+			//
+			//row 8
+			draw(30,50,70,brown);
+			draw(50,60,70,red);
+			draw(60,90,70,brown);
+			//
+			//row 9
+			draw(20,50,80,brown);
+			draw(50,60,80,red);
+			draw(60,80,80,brown);
+			draw(80,90,80,red);
+			draw(90,120,80,brown);
+			//
+			// row 10
+			draw(10,50,90,brown);
+			draw(50,90,90,red);
+			draw(90,130,90,brown);
+
+			
+		},100)
+	</script>	
+</head>
+<body>
+	<canvas id="Mario">	
+</body>
+</html>
